@@ -10,7 +10,6 @@ const ApiStatus: React.FC = () => {
     { status: "Incidente", icon: <ExclamationTriangleIcon width={24} className='text-yellow-500' /> },
   ];
 
-  // Selecciona un estado para demostrar (puedes cambiar esta lógica según tus necesidades)
   const currentStatus = statuses[2];
 
   return <ServiceStatus name="API" status={currentStatus.status} icon={currentStatus.icon} />;

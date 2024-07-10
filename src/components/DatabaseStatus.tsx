@@ -9,7 +9,6 @@ const DatabaseStatus: React.FC = () => {
     { status: "Incidente", icon: <ExclamationTriangleIcon width={24} className='text-yellow-500' /> },
   ];
 
-  // Selecciona un estado para demostrar (puedes cambiar esta lógica según tus necesidades)
   const currentStatus = statuses[1];
 
   return <ServiceStatus name="Base de Datos" status={currentStatus.status} icon={currentStatus.icon} />;
