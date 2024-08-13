@@ -32,14 +32,12 @@ export default function Historial() {
             </Head>
             <Header />
             <div className='w-full h-full bg-white flex flex-col gap-7'>
-                <div className='w-full max-w-5xl mx-auto h-fit flex flex-col gap-3 justify-center px-4 py-12 dm-sans text-center'>
-
+                <div className='w-full max-w-5xl mx-auto h-fit flex flex-col gap-3 justify-center px-4 py-6 sm:py-12 dm-sans text-center'>
                     <h1 className='text-3xl text-neutral-900 font-semibold'>Historial de incidentes</h1>
                     <p className='leading-6'>A continuación encontrarás el listado de incidentes en nuestros servicios por fecha y hora. Si tienes un problema que no aparece aquí, comunícate con el <Link href="mailto:centrodeayuda@guou.cl" className=" text-indigo-500 hover:text-indigo-300 transition-all">equipo de asistencia</Link>. También puedes consultar nuestra sección de <Link href="https://guou.cl/preguntas-frecuentes/" target="_blank" className=" text-indigo-500 hover:text-indigo-300 transition-all">preguntas frecuentes</Link></p>
                 </div>
                 <div className='w-full max-w-5xl mx-auto p-3'>
-                    <div className='flex flex-row gap-3 items-center justify-between text-sm'>
-
+                    <div className='flex flex-col sm:flex-row gap-3 items-center justify-between text-sm'>
                         <div className="flex flex-row gap-2 h-fit items-center">
                             <span className='text-neutral-600'>Filtros:</span>
                             <input
@@ -64,7 +62,7 @@ export default function Historial() {
                             </label>
 
                         </div>
-                        <div className='flex flex-row gap-2 items-center'>
+                        <div className='flex flex-col sm:flex-row gap-2 items-center'>
                             <span className='text-neutral-600'>Servicio:</span>
                             <ComboBox />
                             <MonthSelector />

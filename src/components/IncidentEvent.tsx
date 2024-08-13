@@ -22,16 +22,16 @@ const IncidentEvent: React.FC<IncidentEventProps> = ({
             <div className="mr-4">
                 <img src={logo} width={80} alt="plataforma afectada" />
             </div>
-            <div className='border flex flex-col gap-2'>
+            <div className='border flex flex-col gap-2 w-full'>
                 <div className='flex gap-2 align-middle'>
-                    <h3 className="text-lg font-medium">{title}</h3>
+                    <h3 className="text-lg font-medium w-full">{title}</h3>
                     <span className='text-sm'> {icon}</span>
                 </div>
-                <p className="text-indigo-500">{description}</p>
-                <p className="text-sm text-neutral-500 ">
+                <p className="text-neutral-500">{description}</p>
+                <p className="text-sm text-indigo-500 ">
                     Hora: {incidentTime}
                 </p>
-                <p className="text-sm text-neutral-500 ">
+                <p className="text-sm text-indigo-500 ">
                     Duración: {duration}
                 </p>
             </div>
