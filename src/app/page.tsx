@@ -21,34 +21,32 @@ export default function Home() {
       <Header />
       <div className='w-full h-full bg-white flex flex-col gap-7 dm-sans'>
         <StatusHeader type="active" />
-        <div className='w-full p-4 max-w-5xl mx-auto border border-neutral-600 rounded-xl'>
-          <div className='flex flex-row p-2 justify-between align-middle w-full bg-neutral-100'>
+        <div className='w-full p-4 max-w-5xl mx-auto'>
+          <div className='flex flex-col sm:flex-row p-2 justify-between align-middle w-full bg-neutral-100'>
             <div className='text-left font-semibold text-base p-2'>
               <p>Estado actual por servicio</p>
             </div>
-            <div className='flex flex-row gap-1 align-middle w-fit text-sm'>
+            <div className='flex flex-row gap-2 items-center w-fit text-sm'>
               <CheckCircleIcon width={24} className='text-emerald-500' />
-              <p className='h-fit p-2'>Sin problemas</p>
+              <p className='h-fit'>Funcionando</p>
               <WrenchIcon width={24} className='text-indigo-500' />
-              <p className='h-fit p-2'>En mantenimiento</p>
+              <p className='h-fit'>Mantenimiento</p>
               <ExclamationTriangleIcon width={24} className='text-yellow-500' />
-              <p className='h-fit p-2'>Incidente</p>
+              <p className='h-fit'>Incidente</p>
             </div>
           </div>
-          <div className='flex flex-col h-fit divide-y divide-solid divide-neutral-200 border border-solid border-neutral-200' >
-            <div className='flex flex-row bg-white divide-x divide-solid divide-neutral-200'>
+          <div className=' h-fit grid grid-cols-1 sm:grid-cols-2  sm:divide-x divide-solid divide-neutral-200 border border-solid border-neutral-200' >
+            <div className='divide-y divide-solid divide-neutral-200'>
               <PlatformStatus />
               <AWSStatus />
-            </div>
-            <div className='flex flex-row divide-x divide-solid divide-neutral-200'>
               <SIIStatus />
-              <TGRStatus />
             </div>
-            <div className='flex flex-row divide-x divide-solid divide-neutral-200'>
+            <div className='border-t border-solid border-neutral-200 sm:hidden w-full'></div>
+            <div className='divide-y divide-solid divide-neutral-200'>
+              <TGRStatus />
               <PGCStatus />
               <WEBStatus />
             </div>
-
           </div>
         </div>
       </div>

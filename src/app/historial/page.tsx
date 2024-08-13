@@ -26,8 +26,8 @@ export default function Historial() {
     return (
         <div className="dm-sans">
             <Head>
-                <title>Guou Status</title>
-                <meta name="description" content="Estado de los servicios de Guou Finance" />
+                <title>Historial de incidentes</title>
+                <meta name="description" content="Listado de incidentes en nuestros servicios por fecha y hora" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
@@ -65,7 +65,7 @@ export default function Historial() {
 
                         </div>
                         <div className='flex flex-row gap-2 items-center'>
-                        <span className='text-neutral-600'>Servicio:</span>
+                            <span className='text-neutral-600'>Servicio:</span>
                             <ComboBox />
                             <MonthSelector />
                         </div>
