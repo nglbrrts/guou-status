@@ -11,7 +11,7 @@ const PGCStatus: React.FC = () => {
 
   const currentStatus = statuses[0];
 
-  return <ServiceStatus name="Integración con Backoffice" status={currentStatus.status} icon={currentStatus.icon} image='/img/Logo-PGC.svg' />;
+  return <ServiceStatus name="Backoffice" status={currentStatus.status} icon={currentStatus.icon} image='/img/Logo-PGC.svg' />;
 };
 
 export default PGCStatus;

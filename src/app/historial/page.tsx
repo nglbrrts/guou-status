@@ -3,7 +3,10 @@ import Head from 'next/head';
 import Header from '@/components/Header'
 import Link from 'next/link';
 import MonthSelector from '@/components/MonthSelector';
-
+import DateDivider from '@/components/DateDivider';
+import IncidentEvent from '@/components/IncidentEvent';
+import { WrenchIcon, ExclamationTriangleIcon } from '@heroicons/react/20/solid';
+import ComboBox from '@/components/ComboBox'
 
 const incidentes = [
     { servicio: 'Plataforma', fecha: '05/05/2024', hora: '12:00:00', duración: '4 horas 5 minutos', estado: 'Incidente' },
@@ -34,40 +37,95 @@ export default function Historial() {
                     <h1 className='text-3xl text-neutral-900 font-semibold'>Historial de incidentes</h1>
                     <p className='leading-6'>A continuación encontrarás el listado de incidentes en nuestros servicios por fecha y hora. Si tienes un problema que no aparece aquí, comunícate con el <Link href="mailto:centrodeayuda@guou.cl" className=" text-indigo-500 hover:text-indigo-300 transition-all">equipo de asistencia</Link>. También puedes consultar nuestra sección de <Link href="https://guou.cl/preguntas-frecuentes/" target="_blank" className=" text-indigo-500 hover:text-indigo-300 transition-all">preguntas frecuentes</Link></p>
                 </div>
-                <div className='w-full max-w-5xl mx-auto'>
-                    <MonthSelector />
-                    <table className="min-w-full divide-y divide-neutral-300 ">
-                        <thead className='bg-neutral-100'>
-                            <tr>
-                                <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-neutral-900 sm:pl-0">
-                                    Servicio
-                                </th>
-                                <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-neutral-900">
-                                    Fecha
-                                </th>
-                                <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-neutral-900">
-                                    Hora
-                                </th>
-                                <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-neutral-900">
-                                    Estado
-                                </th>
-                                <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-neutral-900">
-                                    Duración
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-neutral-200">
-                            {incidentes.map((incidente) => (
-                                <tr key={incidente.servicio}>
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-900 font-medium">{incidente.servicio}</td>
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-500">{incidente.fecha}</td>
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-500">{incidente.hora}</td>
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-500">{incidente.estado}</td>
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-500">{incidente.duración}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                <div className='w-full max-w-5xl mx-auto p-3'>
+                    <div className='flex flex-row gap-3 items-center justify-between text-sm'>
+
+                        <div className="flex flex-row gap-2 h-fit items-center">
+                            <span className='text-neutral-600'>Filtros:</span>
+                            <input
+                                id="incidentes"
+                                name="incidentes"
+                                type="checkbox"
+                                aria-describedby="incidentes"
+                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                            />
+                            <label htmlFor="incidentes" className="font-medium text-gray-900 text-sm leading-6">
+                                Incidentes
+                            </label>
+                            <input
+                                id="Mantenimientos"
+                                name="Mantenimientos"
+                                type="checkbox"
+                                aria-describedby="Mantenimientos"
+                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                            />
+                            <label htmlFor="Mantenimientos" className="font-medium text-gray-900 text-sm leading-6">
+                                Mantenimientos
+                            </label>
+
+                        </div>
+                        <div className='flex flex-row gap-2 items-center'>
+                        <span className='text-neutral-600'>Servicio:</span>
+                            <ComboBox />
+                            <MonthSelector />
+                        </div>
+                    </div>
+                    <div>
+                        <DateDivider date="20 de octubre, 2024" />
+                        <IncidentEvent
+                            title="Interrupción del servicio de cesiones"
+                            description="Problemas al enviar y recibir cesiones en la plataforma por un incidente en el Servicio de Impuestos Internos."
+                            icon={<ExclamationTriangleIcon width={24} className="text-yellow-500" />}
+                            duration="1 hora 15 minutos"
+                            incidentTime="10:45 AM"
+                            logo="./img/Logo-SII.svg"
+                        />
+                        <DateDivider date="15 de octubre, 2024" />
+                        <IncidentEvent
+                            title="Mantenimiento programado en plataforma"
+                            description="Este mantenimiento es necesario para mejorar el rendimiento y la seguridad de nuestros servicios."
+                            icon={<WrenchIcon width={24} className="text-indigo-500" />}
+                            duration="1 hora 15 minutos"
+                            incidentTime="10:45 AM"
+                            logo="./img/Logo-Web.svg"
+                        />
+                        <DateDivider date="05 de septiembre, 2024" />
+
+
+
+                        <IncidentEvent
+                            title=" Aenean vulputate eleifend tellus. "
+                            description="Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus."
+                            icon={<ExclamationTriangleIcon width={24} className="text-yellow-500" />}
+                            duration="1 hora 15 minutos"
+                            incidentTime="10:45 AM"
+                            logo="./img/Logo-TGR.svg"
+                        /> <IncidentEvent
+                            title="viverra quis, feugiat a tellus. Phasellus viverra nulla ut metus varius laoreet Quisque rutrum."
+                            description="Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus."
+                            icon={<ExclamationTriangleIcon width={24} className="text-yellow-500" />}
+                            duration="1 hora 15 minutos"
+                            incidentTime="10:45 AM"
+                            logo="./img/Logo-AWS.svg"
+                        /> <IncidentEvent
+                            title=" Nam quam nunc blandit vel"
+                            description="Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus."
+                            icon={<ExclamationTriangleIcon width={24} className="text-yellow-500" />}
+                            duration="1 hora 15 minutos"
+                            incidentTime="10:45 AM"
+                            logo="./img/Logo-PGC.svg"
+                        />
+                        <DateDivider date="12 de agosto, 2024" />
+                        <IncidentEvent
+                            title=" Sed consequat leo eget bibendum sodales"
+                            description="Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus."
+                            icon={<ExclamationTriangleIcon width={24} className="text-yellow-500" />}
+                            duration="1 hora 15 minutos"
+                            incidentTime="10:45 AM"
+                            logo="./img/Logo-SII.svg"
+                        />
+
+                    </div>
 
 
                 </div>

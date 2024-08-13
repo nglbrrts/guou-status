@@ -6,7 +6,7 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = (props) => {
     return (
-        <div className="w-full p-4 bg-neutral-800 text-white flex flex-row justify-between border border-b border-neutral-500 ">
+        <div className="w-full p-4 bg-neutral-800 text-white flex flex-row justify-between items-center border border-b border-neutral-500 ">
             <Link href="/" className="text-sm text-white hover:text-neutral-300 transition-all h-fit p-2 rounded-lg">
                 <img src="./img/logo.png" width={150} alt="logo" />
             </Link>
