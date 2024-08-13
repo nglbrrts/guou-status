@@ -11,7 +11,7 @@ const messageMap = {
     active: {
         icon: <CheckCircleIcon width={100} className='text-emerald-500 w-fit mx-auto' />,
         message: 'La plataforma Guou Finance está activa y funcionando',
-        details: 'Si tienes problemas para ingresar o necesitas ayuda envía un mensaje a tu ejecutivo o escríbenos a centrodeayuda@guou.cl.',
+        details: 'Si tienes problemas para ingresar o necesitas ayuda envía un mensaje a tu ejecutivo o escríbenos a <a href="mailto:centrodeayuda@guou.cl" style="color:#6466F1;">centrodeayuda@guou.cl</a>.',
     },
     maintenance: {
         icon: <WrenchIcon width={100} className='text-indigo-500 w-fit mx-auto' />,
@@ -21,7 +21,7 @@ const messageMap = {
     incident: {
         icon: <ExclamationTriangleIcon width={100} className='text-yellow-500 w-fit mx-auto' />,
         message: 'Problemas de conexión',
-        details: 'Estamos experimentando problemas con algunos servicios, nuestro equipo está trabajando para solucionarlos lo antes posible. Si necesitas ayuda envía un mensaje a tu ejecutivo o escríbenos a centrodeayuda@guou.cl.',
+        details: 'Estamos experimentando problemas con algunos servicios, nuestro equipo está trabajando para solucionarlos lo antes posible. Si necesitas ayuda envía un mensaje a tu ejecutivo o escríbenos a <a href="mailto:centrodeayuda@guou.cl" style="color:#6466F1;">centrodeayuda@guou.cl</a>.',
     },
 };
 
